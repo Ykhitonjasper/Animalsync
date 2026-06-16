@@ -1,0 +1,257 @@
+{
+  "globalLastUpdated": "2025-12-15",
+  "countries": [
+    {
+      "code": "US", "name": "United States", "flag": "🇺🇸",
+      "difficulty": "moderate", "detailTier": "deep",
+      "lastUpdated": "2025-11-20",
+      "officialSource": "https://www.aphis.usda.gov/pet-travel",
+      "notes": "USDA APHIS endorsed health certificate required. Rules vary by state of arrival.",
+      "requirements": [
+        {"stableID": "US-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "ISO 11784/11785 compliant chip implanted before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "US-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Primary vaccination ≥28 days before entry. Boosters before expiry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 28, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "US-HEALTH-CERT", "typeRaw": "healthCertificate", "title": "USDA Endorsed Health Certificate", "descriptionText": "APHIS Form 7001 issued by USDA-accredited vet, endorsed within 10 days of travel.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": []},
+        {"stableID": "US-CDC-DOG", "typeRaw": "importPermit", "title": "CDC Dog Import Form", "descriptionText": "DogBot online form (2024+). Required for all dogs entering the US.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog"]}
+      ]
+    },
+    {
+      "code": "GB", "name": "United Kingdom", "flag": "🇬🇧",
+      "difficulty": "moderate", "detailTier": "deep",
+      "lastUpdated": "2025-10-30",
+      "officialSource": "https://www.gov.uk/take-pet-abroad",
+      "notes": "PETS scheme. Approved routes only. Tapeworm treatment is dog-only.",
+      "requirements": [
+        {"stableID": "GB-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Implanted prior to rabies vaccination.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "GB-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Minimum 21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "GB-AHC", "typeRaw": "healthCertificate", "title": "Animal Health Certificate (GB AHC)", "descriptionText": "Issued by Official Veterinarian within 10 days of travel.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "GB-TAPEWORM", "typeRaw": "parasiteTreatment", "title": "Tapeworm Treatment", "descriptionText": "Praziquantel administered 24–120 hours before entry, recorded by vet.", "daysBeforeEntryMin": 5, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog"]}
+      ]
+    },
+    {
+      "code": "DE", "name": "Germany", "flag": "🇩🇪",
+      "difficulty": "easy", "detailTier": "deep",
+      "lastUpdated": "2025-11-12",
+      "officialSource": "https://www.bmel.de/EN/topics/animals/animal-health/pet-travel.html",
+      "notes": "EU Regulation 576/2013. EU Pet Passport accepted for intra-EU.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Required before rabies vaccination.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Minimum 21 days before entry, max 12 months validity for non-EU origin.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-EHC", "typeRaw": "healthCertificate", "title": "EU Health Certificate (Annex IV)", "descriptionText": "From non-EU origins, issued within 10 days of travel.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-TITER-NONLISTED", "typeRaw": "titerTest", "title": "Rabies Titer Test (from non-listed countries)", "descriptionText": "FAVN/RFFIT ≥0.5 IU/ml, 30 days after vaccination, 3 months before entry.", "daysBeforeEntryMin": 90, "daysBeforeEntryMax": 90, "required": false, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "FR", "name": "France", "flag": "🇫🇷",
+      "difficulty": "easy", "detailTier": "deep",
+      "lastUpdated": "2025-11-12",
+      "officialSource": "https://agriculture.gouv.fr/",
+      "notes": "EU Regulation 576/2013.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Required before rabies vaccination.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Minimum 21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-EHC", "typeRaw": "healthCertificate", "title": "EU Health Certificate (Annex IV)", "descriptionText": "Issued within 10 days of travel from non-EU origin.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "AU", "name": "Australia", "flag": "🇦🇺",
+      "difficulty": "restricted", "detailTier": "deep",
+      "lastUpdated": "2025-09-05",
+      "officialSource": "https://www.agriculture.gov.au/biosecurity-trade/cats-dogs",
+      "notes": "Ferrets, rabbits, hamsters NOT permitted. Mandatory 10-day post-arrival quarantine. Lengthy preparation timeline.",
+      "requirements": [
+        {"stableID": "AU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Implanted before any rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Inactivated vaccine ≥180 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 180, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AU-TITER", "typeRaw": "titerTest", "title": "RNATT Titer Test", "descriptionText": "≥0.5 IU/ml drawn ≥180 days before entry, lab on approved list.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 180, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AU-PERMIT", "typeRaw": "importPermit", "title": "Department Import Permit", "descriptionText": "Apply via BICON. Issued before flight booking.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AU-QUARANTINE", "typeRaw": "quarantine", "title": "10-Day PEQ Quarantine", "descriptionText": "Post-Entry Quarantine in Melbourne. Pre-book ≥42 days in advance.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 42, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "JP", "name": "Japan", "flag": "🇯🇵",
+      "difficulty": "hard", "detailTier": "deep",
+      "lastUpdated": "2025-10-08",
+      "officialSource": "https://www.maff.go.jp/aqs/english/animal/dog/import-other.html",
+      "notes": "Advance notification ≥40 days. Two rabies vaccines required.",
+      "requirements": [
+        {"stableID": "JP-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Implanted before rabies vaccinations.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "JP-RABIES-2X", "typeRaw": "rabiesVaccine", "title": "Two Rabies Vaccinations", "descriptionText": "Two doses ≥30 days apart, second within validity window.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "JP-TITER", "typeRaw": "titerTest", "title": "FAVN Titer Test", "descriptionText": "≥0.5 IU/ml. 180-day wait period from sample date before entry.", "daysBeforeEntryMin": 730, "daysBeforeEntryMax": 180, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "JP-NOTIFY", "typeRaw": "importPermit", "title": "Advance Notification (Form A)", "descriptionText": "Submit ≥40 days before arrival via AQS.", "daysBeforeEntryMin": 90, "daysBeforeEntryMax": 40, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "JP-HEALTH", "typeRaw": "healthCertificate", "title": "Health Certificate (Form C/AC)", "descriptionText": "Issued by government vet, within 10 days of travel.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "AE", "name": "United Arab Emirates", "flag": "🇦🇪",
+      "difficulty": "moderate", "detailTier": "deep",
+      "lastUpdated": "2025-11-01",
+      "officialSource": "https://www.moccae.gov.ae/en/services/eservices.aspx",
+      "notes": "MOCCAE import permit required. Pit Bull, Tosa, Argentino, Brasileiro, Karabash banned.",
+      "requirements": [
+        {"stableID": "AE-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Mandatory before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AE-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry, ≤12 months ago.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AE-PERMIT", "typeRaw": "importPermit", "title": "MOCCAE Import Permit", "descriptionText": "Apply via MOCCAE portal ≥5 days before travel.", "daysBeforeEntryMin": 30, "daysBeforeEntryMax": 5, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "AE-HEALTH", "typeRaw": "healthCertificate", "title": "Government Health Certificate", "descriptionText": "Issued within 10 days of travel, endorsed by origin authority.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "ES", "name": "Spain", "flag": "🇪🇸", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://www.mapa.gob.es/", "notes": "EU rules apply.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-EHC", "typeRaw": "healthCertificate", "title": "EU Health Certificate", "descriptionText": "Issued within 10 days from non-EU origin.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "IT", "name": "Italy", "flag": "🇮🇹", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://www.salute.gov.it/", "notes": "EU rules apply.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-EHC", "typeRaw": "healthCertificate", "title": "EU Health Certificate", "descriptionText": "Issued within 10 days from non-EU origin.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "CA", "name": "Canada", "flag": "🇨🇦", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-10-15", "officialSource": "https://inspection.canada.ca/", "notes": "Rabies-free countries have simplified entry.",
+      "requirements": [
+        {"stableID": "CA-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Certificate", "descriptionText": "Current rabies certificate in English/French.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "CA-HEALTH", "typeRaw": "healthCertificate", "title": "Veterinary Health Certificate", "descriptionText": "Bilingual certificate from licensed vet.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "NL", "name": "Netherlands", "flag": "🇳🇱", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://www.government.nl/", "notes": "EU rules apply.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "CH", "name": "Switzerland", "flag": "🇨🇭", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-10-01", "officialSource": "https://www.blv.admin.ch/", "notes": "Follows EU pet travel rules.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "SE", "name": "Sweden", "flag": "🇸🇪", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://jordbruksverket.se/", "notes": "EU rules apply.",
+      "requirements": [
+        {"stableID": "EU-MICROCHIP", "typeRaw": "microchip", "title": "ISO Microchip", "descriptionText": "Before rabies vaccine.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "SE-TAPEWORM", "typeRaw": "parasiteTreatment", "title": "Tapeworm Treatment", "descriptionText": "Praziquantel 24-120 hours before entry.", "daysBeforeEntryMin": 5, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog"]}
+      ]
+    },
+    {
+      "code": "NO", "name": "Norway", "flag": "🇳🇴", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-10-05", "officialSource": "https://www.mattilsynet.no/", "notes": "Same regime as Sweden incl. tapeworm.",
+      "requirements": [
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "NO-TAPEWORM", "typeRaw": "parasiteTreatment", "title": "Tapeworm Treatment", "descriptionText": "Required for all dogs entering from outside Finland/Ireland/Malta/UK.", "daysBeforeEntryMin": 5, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog"]}
+      ]
+    },
+    {
+      "code": "DK", "name": "Denmark", "flag": "🇩🇰", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://www.foedevarestyrelsen.dk/", "notes": "EU rules.",
+      "requirements": [
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "PT", "name": "Portugal", "flag": "🇵🇹", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://www.dgav.pt/", "notes": "EU rules.",
+      "requirements": [
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {
+      "code": "IE", "name": "Ireland", "flag": "🇮🇪", "difficulty": "moderate", "detailTier": "medium",
+      "lastUpdated": "2025-09-30", "officialSource": "https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/", "notes": "Tapeworm treatment required.",
+      "requirements": [
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]},
+        {"stableID": "IE-TAPEWORM", "typeRaw": "parasiteTreatment", "title": "Tapeworm Treatment", "descriptionText": "Praziquantel 24-120 hours before entry, required for dogs.", "daysBeforeEntryMin": 5, "daysBeforeEntryMax": 1, "required": true, "appliesToSpecies": ["dog"]}
+      ]
+    },
+    {
+      "code": "NZ", "name": "New Zealand", "flag": "🇳🇿", "difficulty": "hard", "detailTier": "medium",
+      "lastUpdated": "2025-08-20", "officialSource": "https://www.mpi.govt.nz/", "notes": "Cats and dogs only. Mandatory quarantine.",
+      "requirements": [
+        {"stableID": "NZ-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Required from non-listed countries.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 180, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "NZ-TITER", "typeRaw": "titerTest", "title": "Rabies Titer Test", "descriptionText": "≥0.5 IU/ml, valid ≥180 days before entry.", "daysBeforeEntryMin": 730, "daysBeforeEntryMax": 180, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "NZ-PERMIT", "typeRaw": "importPermit", "title": "MPI Import Permit", "descriptionText": "Apply ≥30 days in advance.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "NZ-QUARANTINE", "typeRaw": "quarantine", "title": "10-Day Quarantine", "descriptionText": "Post-entry quarantine at approved facility.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "SG", "name": "Singapore", "flag": "🇸🇬", "difficulty": "hard", "detailTier": "medium",
+      "lastUpdated": "2025-09-10", "officialSource": "https://www.nparks.gov.sg/avs", "notes": "Category-based system. AVS license required.",
+      "requirements": [
+        {"stableID": "SG-PERMIT", "typeRaw": "importPermit", "title": "AVS Import License", "descriptionText": "Apply via AVS GoBusiness portal.", "daysBeforeEntryMin": 30, "daysBeforeEntryMax": 7, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "SG-TITER", "typeRaw": "titerTest", "title": "Rabies Titer Test", "descriptionText": "Required from Category B/C/D countries.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 90, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "KR", "name": "South Korea", "flag": "🇰🇷", "difficulty": "moderate", "detailTier": "medium",
+      "lastUpdated": "2025-09-15", "officialSource": "https://www.qia.go.kr/", "notes": "Microchip and rabies cert with titer for some origins.",
+      "requirements": [
+        {"stableID": "KR-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥30 days, ≤12 months before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "KR-HEALTH", "typeRaw": "healthCertificate", "title": "Government Health Certificate", "descriptionText": "Issued within 10 days of travel.", "daysBeforeEntryMin": 10, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "TH", "name": "Thailand", "flag": "🇹🇭", "difficulty": "moderate", "detailTier": "medium",
+      "lastUpdated": "2025-08-22", "officialSource": "https://english.dld.go.th/", "notes": "Import permit required.",
+      "requirements": [
+        {"stableID": "TH-PERMIT", "typeRaw": "importPermit", "title": "DLD Import Permit", "descriptionText": "Apply ≥15 days before arrival.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 15, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "TH-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "MX", "name": "Mexico", "flag": "🇲🇽", "difficulty": "easy", "detailTier": "medium",
+      "lastUpdated": "2025-10-10", "officialSource": "https://www.gob.mx/senasica", "notes": "Lenient on healthy pets, visual inspection at entry.",
+      "requirements": [
+        {"stableID": "MX-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Recent rabies certificate.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 15, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "BR", "name": "Brazil", "flag": "🇧🇷", "difficulty": "moderate", "detailTier": "medium",
+      "lastUpdated": "2025-09-12", "officialSource": "https://www.gov.br/agricultura/", "notes": "CVI required, must be authenticated.",
+      "requirements": [
+        {"stableID": "BR-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Valid certificate, ≥30 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]},
+        {"stableID": "BR-CVI", "typeRaw": "healthCertificate", "title": "International Veterinary Certificate (CVI)", "descriptionText": "Issued ≤60 days, authenticated by origin authority.", "daysBeforeEntryMin": 60, "daysBeforeEntryMax": 0, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "TR", "name": "Turkey", "flag": "🇹🇷", "difficulty": "easy", "detailTier": "shallow",
+      "lastUpdated": "2025-08-01", "officialSource": "https://www.tarimorman.gov.tr/", "notes": "Verify with consulate before travel.",
+      "requirements": [
+        {"stableID": "TR-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "Valid certificate required.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 30, "required": true, "appliesToSpecies": ["dog","cat"]}
+      ]
+    },
+    {
+      "code": "GR", "name": "Greece", "flag": "🇬🇷", "difficulty": "easy", "detailTier": "shallow",
+      "lastUpdated": "2025-08-01", "officialSource": "https://www.minagric.gr/", "notes": "EU rules.",
+      "requirements": [
+        {"stableID": "EU-RABIES", "typeRaw": "rabiesVaccine", "title": "Rabies Vaccination", "descriptionText": "≥21 days before entry.", "daysBeforeEntryMin": 365, "daysBeforeEntryMax": 21, "required": true, "appliesToSpecies": ["dog","cat","ferret"]}
+      ]
+    },
+    {"code": "PL", "name": "Poland", "flag": "🇵🇱", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.wetgiw.gov.pl/", "notes": "EU rules.", "requirements": []},
+    {"code": "CZ", "name": "Czech Republic", "flag": "🇨🇿", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.svscr.cz/", "notes": "EU rules.", "requirements": []},
+    {"code": "AT", "name": "Austria", "flag": "🇦🇹", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.verbrauchergesundheit.gv.at/", "notes": "EU rules.", "requirements": []},
+    {"code": "BE", "name": "Belgium", "flag": "🇧🇪", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.health.belgium.be/", "notes": "EU rules.", "requirements": []},
+    {"code": "FI", "name": "Finland", "flag": "🇫🇮", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.ruokavirasto.fi/", "notes": "Tapeworm treatment for dogs.", "requirements": []},
+    {"code": "IS", "name": "Iceland", "flag": "🇮🇸", "difficulty": "restricted", "detailTier": "shallow", "lastUpdated": "2025-07-15", "officialSource": "https://www.mast.is/", "notes": "Strict rabies-free regime with mandatory quarantine.", "requirements": []},
+    {"code": "RU", "name": "Russia", "flag": "🇷🇺", "difficulty": "moderate", "detailTier": "shallow", "lastUpdated": "2025-08-10", "officialSource": "https://fsvps.gov.ru/", "notes": "Form #1 veterinary certificate required.", "requirements": []},
+    {"code": "GE", "name": "Georgia", "flag": "🇬🇪", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://moa.gov.ge/", "notes": "Rabies certificate sufficient.", "requirements": []},
+    {"code": "KZ", "name": "Kazakhstan", "flag": "🇰🇿", "difficulty": "moderate", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.gov.kz/", "notes": "Verify with consulate.", "requirements": []},
+    {"code": "IN", "name": "India", "flag": "🇮🇳", "difficulty": "hard", "detailTier": "shallow", "lastUpdated": "2025-07-20", "officialSource": "https://dahd.nic.in/", "notes": "Quarantine on arrival possible for non-residents.", "requirements": []},
+    {"code": "CN", "name": "China", "flag": "🇨🇳", "difficulty": "hard", "detailTier": "shallow", "lastUpdated": "2025-07-10", "officialSource": "http://english.customs.gov.cn/", "notes": "30-day quarantine in non-exempt cities.", "requirements": []},
+    {"code": "VN", "name": "Vietnam", "flag": "🇻🇳", "difficulty": "moderate", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.mard.gov.vn/", "notes": "Verify with embassy.", "requirements": []},
+    {"code": "ID", "name": "Indonesia", "flag": "🇮🇩", "difficulty": "hard", "detailTier": "shallow", "lastUpdated": "2025-07-25", "officialSource": "http://www.pertanian.go.id/", "notes": "Bali region restrictions.", "requirements": []},
+    {"code": "AR", "name": "Argentina", "flag": "🇦🇷", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.argentina.gob.ar/senasa", "notes": "Standard CVI required.", "requirements": []},
+    {"code": "CL", "name": "Chile", "flag": "🇨🇱", "difficulty": "easy", "detailTier": "shallow", "lastUpdated": "2025-08-01", "officialSource": "https://www.sag.gob.cl/", "notes": "SAG inspection on arrival.", "requirements": []},
+    {"code": "ZA", "name": "South Africa", "flag": "🇿🇦", "difficulty": "hard", "detailTier": "shallow", "lastUpdated": "2025-07-15", "officialSource": "https://www.dalrrd.gov.za/", "notes": "Veterinary import permit required.", "requirements": []}
+  ]
+}

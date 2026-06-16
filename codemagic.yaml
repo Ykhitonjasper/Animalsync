@@ -1,0 +1,70 @@
+workflows:
+  app-store-release:
+    name: App Store Release
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    environment:
+      xcode: latest
+      groups:
+        - app_store_credentials
+      vars:
+        XCODE_PROJECT: Animalsync.xcodeproj
+        XCODE_SCHEME: Animalsync
+        BUNDLE_ID: com.jaksteam.animalsync
+
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+
+    scripts:
+      - name: Install XcodeGen
+        script: brew install xcodegen
+
+      - name: Generate Xcode project
+        script: xcodegen generate
+
+      - name: Set up keychain for code signing
+        script: keychain initialize
+
+      - name: Require CERTIFICATE_PRIVATE_KEY
+        script: |
+          if [ -z "$CERTIFICATE_PRIVATE_KEY" ]; then
+            echo "Missing CERTIFICATE_PRIVATE_KEY in app_store_credentials."
+            exit 1
+          fi
+
+      - name: Fetch signing files
+        script: |
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+
+      - name: Add certificates to keychain
+        script: keychain add-certificates
+
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles \
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+            --archive-method app-store
+
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+            --scheme "$XCODE_SCHEME"
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        submit_to_app_store: true

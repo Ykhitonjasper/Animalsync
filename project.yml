@@ -1,0 +1,86 @@
+name: Animalsync
+options:
+  bundleIdPrefix: com.jaksteam
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+packages:
+  AnalyticsKit:
+    path: Packages/AnalyticsKit
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    from: "11.0.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+
+targets:
+  Animalsync:
+    type: application
+    platform: iOS
+    sources:
+      - path: Animalsync
+        excludes:
+          - "**/*.storekit"
+    resources:
+      - path: Animalsync/Resources
+      - path: Animalsync/Assets.xcassets
+      - path: Animalsync/GoogleService-Info.plist
+    dependencies:
+      - package: AnalyticsKit
+      - package: Firebase
+        products:
+          - FirebaseCore
+    settings:
+      base:
+        INFOPLIST_FILE: ""
+        PRODUCT_BUNDLE_IDENTIFIER: com.jaksteam.animalsync
+        INFOPLIST_KEY_CFBundleDisplayName: "Animalsync"
+        PRODUCT_NAME: "Animalsync"
+        GENERATE_INFOPLIST_FILE: "YES"
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: ""
+        INFOPLIST_KEY_UIRequiredDeviceCapabilities:
+          - arm64
+        INFOPLIST_KEY_UIDeviceFamily: [1]
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: "NO"
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: "YES"
+        INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
+        INFOPLIST_KEY_NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: false
+        INFOPLIST_KEY_NSCameraUsageDescription: "Animalsync uses the camera to photograph your pets and scan veterinary documents."
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Animalsync accesses your photo library to set pet avatars and import documents."
+        INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: "Animalsync saves scanned veterinary documents to your photo library on request."
+        INFOPLIST_KEY_NSUserNotificationsUsageDescription: "Animalsync sends reminders before vaccination and paperwork deadlines."
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+
+  AnimalsyncTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: AnimalsyncTests
+    dependencies:
+      - target: Animalsync
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: "YES"
+        PRODUCT_BUNDLE_IDENTIFIER: com.jaksteam.animalsync.tests
+
+schemes:
+  Animalsync:
+    build:
+      targets:
+        Animalsync: all
+    test:
+      targets:
+        - AnimalsyncTests
+    storeKitConfiguration: Animalsync/Animalsync.storekit
