@@ -1,6 +1,6 @@
 name: Animalsync
 options:
-  bundleIdPrefix: com.jaksteam
+  bundleIdPrefix: com.TuyetMaiDoThi
   deploymentTarget:
     iOS: "17.0"
   xcodeVersion: "15.0"
@@ -37,7 +37,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: ""
-        PRODUCT_BUNDLE_IDENTIFIER: com.jaksteam.animalsync
+        PRODUCT_BUNDLE_IDENTIFIER: com.TuyetMaiDoThi.Animalsync
         INFOPLIST_KEY_CFBundleDisplayName: "Animalsync"
         PRODUCT_NAME: "Animalsync"
         GENERATE_INFOPLIST_FILE: "YES"
@@ -73,7 +73,7 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: "YES"
-        PRODUCT_BUNDLE_IDENTIFIER: com.jaksteam.animalsync.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.TuyetMaiDoThi.Animalsync.tests
 
 schemes:
   Animalsync:

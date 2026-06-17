@@ -15,7 +15,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.jaksteam.animalsync.pro.lifetime",
+      "productID" : "com.TuyetMaiDoThi.Animalsync.pro.lifetime",
       "referenceName" : "Pro Lifetime",
       "type" : "NonConsumable"
     }
@@ -61,7 +61,7 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.jaksteam.animalsync.pro.monthly",
+          "productID" : "com.TuyetMaiDoThi.Animalsync.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Pro Monthly",
           "subscriptionGroupID" : "pro_group",

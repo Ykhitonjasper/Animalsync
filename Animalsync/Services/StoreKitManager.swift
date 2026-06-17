@@ -2,8 +2,8 @@ import Foundation
 import StoreKit
 
 enum ProProductID {
-    static let monthly = "com.jaksteam.animalsync.pro.monthly"
-    static let lifetime = "com.jaksteam.animalsync.pro.lifetime"
+    static let monthly = "com.TuyetMaiDoThi.Animalsync.pro.monthly"
+    static let lifetime = "com.TuyetMaiDoThi.Animalsync.pro.lifetime"
     static let all = [monthly, lifetime]
 }
 

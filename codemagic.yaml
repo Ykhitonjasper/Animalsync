@@ -11,7 +11,7 @@ workflows:
       vars:
         XCODE_PROJECT: Animalsync.xcodeproj
         XCODE_SCHEME: Animalsync
-        BUNDLE_ID: com.jaksteam.animalsync
+        BUNDLE_ID: com.TuyetMaiDoThi.Animalsync
 
     triggering:
       events:
