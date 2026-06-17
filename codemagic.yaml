@@ -1,6 +1,6 @@
 workflows:
   app-store-release:
-    name: App Store Release
+    name: iOS signed IPA (App Store)
     max_build_duration: 120
     instance_type: mac_mini_m2
 
@@ -21,23 +21,17 @@ workflows:
           include: true
 
     scripts:
-      - name: Install XcodeGen
-        script: brew install xcodegen
-
-      - name: Generate Xcode project
-        script: xcodegen generate
-
       - name: Set up keychain for code signing
         script: keychain initialize
 
-      - name: Require CERTIFICATE_PRIVATE_KEY
+      - name: Require CERTIFICATE_PRIVATE_KEY (Apple Distribution CSR key)
         script: |
           if [ -z "$CERTIFICATE_PRIVATE_KEY" ]; then
             echo "Missing CERTIFICATE_PRIVATE_KEY in app_store_credentials."
             exit 1
           fi
 
-      - name: Fetch signing files
+      - name: Fetch signing files (App Store profile + certificate)
         script: |
           app-store-connect fetch-signing-files "$BUNDLE_ID" \
             --type IOS_APP_STORE \
@@ -46,13 +40,13 @@ workflows:
       - name: Add certificates to keychain
         script: keychain add-certificates
 
-      - name: Set up code signing
+      - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles \
             --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
             --archive-method app-store
 
-      - name: Build IPA
+      - name: Build ipa for distribution
         script: |
           xcode-project build-ipa \
             --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
@@ -67,4 +61,4 @@ workflows:
         api_key: $APP_STORE_CONNECT_PRIVATE_KEY
         key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
-        submit_to_app_store: true
+        submit_to_testflight: false
