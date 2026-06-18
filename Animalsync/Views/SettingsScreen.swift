@@ -151,7 +151,10 @@ struct SettingsScreen: View {
                 icon: "envelope",
                 url: LegalLinks.supportEmail
             )
-            AppFormInfoRow(title: "Version", value: "1.0.0")
+            AppFormInfoRow(
+                title: "Version",
+                value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
+            )
         }
     }
 
