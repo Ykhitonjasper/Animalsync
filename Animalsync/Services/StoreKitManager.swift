@@ -7,6 +7,7 @@ enum ProProductID {
     static let all = [monthly, lifetime]
 }
 
+@MainActor
 @Observable
 final class StoreKitManager {
     static let shared = StoreKitManager()
@@ -14,6 +15,7 @@ final class StoreKitManager {
     private(set) var products: [Product] = []
     private(set) var isPro = false
     private(set) var isLoading = false
+    private(set) var hasLoadedProducts = false
     private(set) var purchaseError: String?
 
     private var updatesTask: Task<Void, Never>?
@@ -28,12 +30,23 @@ final class StoreKitManager {
     }
 
     func loadProducts() async {
+        guard !isLoading else { return }
         isLoading = true
-        defer { isLoading = false }
+        purchaseError = nil
+        defer {
+            isLoading = false
+            hasLoadedProducts = true
+        }
+
         do {
-            products = try await Product.products(for: ProProductID.all)
-                .sorted { $0.price < $1.price }
+            let loaded = try await Product.products(for: ProProductID.all)
+            products = loaded.sorted { $0.price < $1.price }
+            if products.isEmpty {
+                purchaseError =
+                    "Unable to load purchase options. Please check your connection and try again."
+            }
         } catch {
+            products = []
             purchaseError = error.localizedDescription
         }
     }

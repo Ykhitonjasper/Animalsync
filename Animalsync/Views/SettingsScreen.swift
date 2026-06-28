@@ -50,7 +50,12 @@ struct SettingsScreen: View {
                 }
                 Spacer()
                 if !store.isPro {
-                    Button("Upgrade") { showPaywall = true }
+                    Button("Upgrade") {
+                        Task {
+                            await store.loadProducts()
+                            showPaywall = true
+                        }
+                    }
                         .font(.caption.weight(.bold))
                         .foregroundStyle(.white)
                         .padding(.horizontal, 14)

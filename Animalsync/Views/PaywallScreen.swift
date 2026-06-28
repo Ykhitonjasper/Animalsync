@@ -3,7 +3,7 @@ import StoreKit
 
 struct PaywallScreen: View {
     @Environment(\.dismiss) private var dismiss
-    private var store = StoreKitManager.shared
+    @Bindable private var store = StoreKitManager.shared
     @State private var selectedProductID = ProProductID.lifetime
     @State private var isPurchasing = false
 
@@ -46,12 +46,10 @@ struct PaywallScreen: View {
                 }
             }
             .task {
-                await store.loadProducts()
-                if store.product(for: ProProductID.lifetime) != nil {
-                    selectedProductID = ProProductID.lifetime
-                } else if let first = store.products.first {
-                    selectedProductID = first.id
-                }
+                await reloadProductsIfNeeded()
+            }
+            .onChange(of: store.products.count) { _, _ in
+                syncSelectedProduct()
             }
         }
     }
@@ -88,14 +86,22 @@ struct PaywallScreen: View {
 
     @ViewBuilder
     private var planPicker: some View {
-        if store.products.isEmpty && store.isLoading {
+        if store.isLoading && store.products.isEmpty {
             ProgressView("Loading plans…")
                 .padding()
         } else if store.products.isEmpty {
-            Text("Subscriptions are not available right now. Try again later.")
-                .font(.footnote)
-                .foregroundStyle(Color.appMuted)
-                .padding(.horizontal)
+            VStack(spacing: 12) {
+                Text("Purchase options couldn't be loaded.")
+                    .font(.footnote)
+                    .foregroundStyle(Color.appMuted)
+                    .multilineTextAlignment(.center)
+                Button("Try Again") {
+                    Task { await reloadProductsIfNeeded(force: true) }
+                }
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(Color.appBrand)
+            }
+            .padding(.horizontal)
         } else {
             HStack(spacing: 10) {
                 ForEach(store.products, id: \.id) { product in
@@ -135,7 +141,7 @@ struct PaywallScreen: View {
             Task { await purchaseSelected() }
         } label: {
             Group {
-                if isPurchasing || store.isLoading {
+                if isPurchasing || (store.isLoading && store.products.isEmpty) {
                     ProgressView().tint(.white)
                 } else if store.isPro {
                     Text("You're Pro 🎉")
@@ -203,8 +209,26 @@ struct PaywallScreen: View {
         .disabled(isPurchasing)
     }
 
+    private func reloadProductsIfNeeded(force: Bool = false) async {
+        if force || !store.hasLoadedProducts || store.products.isEmpty {
+            await store.loadProducts()
+        }
+        syncSelectedProduct()
+    }
+
+    private func syncSelectedProduct() {
+        if store.product(for: ProProductID.lifetime) != nil {
+            selectedProductID = ProProductID.lifetime
+        } else if let first = store.products.first {
+            selectedProductID = first.id
+        }
+    }
+
     private func purchaseSelected() async {
-        guard let product = store.product(for: selectedProductID) else { return }
+        guard let product = store.product(for: selectedProductID) else {
+            await reloadProductsIfNeeded(force: true)
+            return
+        }
         isPurchasing = true
         defer { isPurchasing = false }
         await store.purchase(product)
