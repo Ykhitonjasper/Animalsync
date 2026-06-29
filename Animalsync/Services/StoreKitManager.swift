@@ -25,10 +25,6 @@ final class StoreKitManager {
         Task { await refreshEntitlements() }
     }
 
-    deinit {
-        updatesTask?.cancel()
-    }
-
     func loadProducts() async {
         guard !isLoading else { return }
         isLoading = true
